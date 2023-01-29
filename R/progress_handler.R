@@ -1,8 +1,17 @@
-initialize_bar <- function(object) {
-  txtProgressBar(max = length(object))
+.PROGRESS_BAR <- NULL
+
+#' @importFrom utils txtProgressBar
+initialize_bar <- function(object, ...) {
+  structure(
+    txtProgressBar(min = 0, max = length(object), ...),
+    pb_length = length(object)
+  )
 }
 
+#' @importFrom utils getTxtProgressBar setTxtProgressBar
 advance_bar <- function(object, i) {
-  bar <- attr(object, "simpleprogress_bar", exact = TRUE)
-  setTxtProgressBar(bar, getTxtProgressBar(bar) + 1)
+  setTxtProgressBar(.PROGRESS_BAR, getTxtProgressBar(.PROGRESS_BAR) + 1)
+  if (i == attr(.PROGRESS_BAR, "pb_length", exact = TRUE)) {
+    close(.PROGRESS_BAR)
+  }
 }
