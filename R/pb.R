@@ -4,7 +4,7 @@
 #' Makes the object spawn a progress bar in response to indexing with `[[`
 #' operator. Intended to be used with most iterators in R, e.g.:
 #' [base::lapply()] and some of its cousins, [base::Reduce()],
-#' [parallel::mclapply()], [purrr::map()], [foreach::foreach()]...
+#' [plyr::llply()], [purrr::map()], [foreach::foreach()]...
 #'
 #' @param object `ANY`\cr
 #'  An iterable that should spawn a progress bar.
