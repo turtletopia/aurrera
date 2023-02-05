@@ -1,4 +1,4 @@
 library(testthat)
-library(simpleprogress)
+library(aurrera)
 
-test_check("simpleprogress")
+test_check("aurrera")
