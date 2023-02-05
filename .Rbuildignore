@@ -1,2 +1,5 @@
 ^simpleprogress\.Rproj$
 ^\.Rproj\.user$
+^README\.Rmd$
+^codecov\.yml$
+^\.github$
