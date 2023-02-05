@@ -44,13 +44,18 @@ test_that("purrr::map_chr() returns correct value", {
 # PARALLEL::MCLAPPLY ----------------------------------------------------------
 test_that("pb() prints progress bar inside parallel::mclapply()", {
   expect_equal(
-    capture_output(parallel::mclapply(pb(x), identity), width = width),
+    capture_output(
+      parallel::mclapply(pb(x), identity, mc.preschedule = FALSE),
+      width = width
+    ),
     bar
   )
 })
 
 test_that("parallel::mclapply() returns correct value", {
-  suppress_output(ret <- parallel::mclapply(pb(x), identity))
+  suppress_output(
+    ret <- parallel::mclapply(pb(x), identity, mc.preschedule = FALSE)
+  )
   expect_equal(ret, x)
 })
 
