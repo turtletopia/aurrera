@@ -28,7 +28,7 @@ progress bar display in response to indexing.
 Makes the object spawn a progress bar in response to indexing with \code{[[}
 operator. Intended to be used with most iterators in R, e.g.:
 \code{\link[base:lapply]{base::lapply()}} and some of its cousins, \code{\link[base:funprog]{base::Reduce()}},
-\code{\link[parallel:mcdummies]{parallel::mclapply()}}, \code{\link[purrr:map]{purrr::map()}}, \code{\link[foreach:foreach]{foreach::foreach()}}...
+\code{\link[plyr:llply]{plyr::llply()}}, \code{\link[purrr:map]{purrr::map()}}, \code{\link[foreach:foreach]{foreach::foreach()}}...
 }
 \examples{
 result <- lapply(pb(6:20), gmp::factorize)
