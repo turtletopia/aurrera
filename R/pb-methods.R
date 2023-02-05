@@ -15,3 +15,8 @@ str.aurrera_iter <- function(object, ...) {
   class(object) <- setdiff(class(object), "aurrera_iter")
   NextMethod()
 }
+
+#' @export
+c.aurrera_iter <- function(...) {
+  pb(NextMethod())
+}

@@ -2,6 +2,7 @@
 
 S3method("[[",aurrera_iter)
 S3method(as.list,aurrera_iter)
+S3method(c,aurrera_iter)
 S3method(pb,aurrera_iter)
 S3method(pb,default)
 S3method(str,aurrera_iter)
