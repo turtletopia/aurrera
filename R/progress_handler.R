@@ -11,7 +11,8 @@ initialize_bar <- function(object, ...) {
 #' @importFrom utils getTxtProgressBar setTxtProgressBar
 advance_bar <- function(object, i) {
   setTxtProgressBar(.PROGRESS_BAR, getTxtProgressBar(.PROGRESS_BAR) + 1)
-  if (i == attr(.PROGRESS_BAR, "pb_length", exact = TRUE)) {
+  if (getTxtProgressBar(.PROGRESS_BAR) == attr(.PROGRESS_BAR, "pb_length", exact = TRUE)) {
     close(.PROGRESS_BAR)
+    assignInMyNamespace(".PROGRESS_BAR", NULL)
   }
 }
